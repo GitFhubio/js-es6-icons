@@ -107,9 +107,10 @@ let icons_list = [
 ];
 
 const iconsContainer=document.getElementById('icons-container');
-
+const milestone1=document.getElementById('milestone1');
+const milestone2=document.getElementById('milestone2');
 icons_list.forEach((element) => {
-iconsContainer.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
+milestone1.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
 });
 
 // Milestone 2:
@@ -139,7 +140,7 @@ console.log(types_list);
     let type_index = types_list.indexOf(type);
     let icon_color = colors[type_index];
 
-    iconsContainer.innerHTML+=`
+    milestone2.innerHTML+=`
       <div class="icon">
       <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
       <h2>${element.name}</h2>
@@ -215,3 +216,31 @@ iconsContainer.innerHTML+=`
 
 
 });
+
+
+
+const btn1=document.getElementById('btn1');
+const btn2=document.getElementById('btn2');
+btn1.addEventListener('click',function()
+{
+if(milestone1.style.display=='block')
+{
+  milestone1.style.display='none';
+}
+else{milestone1.style.display='block';
+
+}
+}
+)
+btn2.addEventListener('click',function()
+{
+if(milestone2.style.display=='block')
+{
+  milestone2.style.display='none';
+}
+else{milestone2.style.display='block';
+
+}
+}
+)
+// lo so che jquery ha il toggle

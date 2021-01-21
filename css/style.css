@@ -73,3 +73,7 @@ height:50px;
   background-color: white;
   border-radius: 10px;
 }
+
+#milestone1,#milestone2{
+  display:none;
+}
