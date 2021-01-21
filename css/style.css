@@ -37,10 +37,8 @@ i {
 }
 
 #filter > .icons-filter {
-  padding: 10px;
-  border-radius: 5px;
+  margin-left: 10px;
   font-weight: 600;
-  border: 1px solid #4B088A;
   cursor: pointer;
 }
 
@@ -57,6 +55,10 @@ i {
 
 #filter{
 background-color: #CED8F6;
+display:flex;
+justify-content: center;
+align-items: center;
+height:50px;
 }
 
 #icons-container div{
