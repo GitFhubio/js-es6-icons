@@ -107,12 +107,18 @@ let icons_list = [
 ];
 
 const iconsContainer=document.getElementById('icons-container');
-const milestone1=document.getElementById('milestone1');
-const milestone2=document.getElementById('milestone2');
-icons_list.forEach((element) => {
-milestone1.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
-});
 
+const btn1=document.getElementById('btn1');
+const btn2=document.getElementById('btn2');
+btn1.addEventListener('click',function()
+{ iconsContainer.innerHTML='';
+  icons_list.forEach((element) => {
+  iconsContainer.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
+  });
+
+
+}
+)
 // Milestone 2:
 // - Definire un array di colori e associare ad ogni tipo di icona un colore.
 // - Visualizzare le icone di colore diverso in base al tipo.
@@ -133,22 +139,30 @@ if (!types_list.includes(type))
 // ora ho array di colori e array di tipi
 console.log(types_list);
 
-  icons_list.forEach((element) => {
-      const type=element.type;
-    // const {name,family,prefix,type} = element;
-    // qui connetto il colore al tipo
-    let type_index = types_list.indexOf(type);
-    let icon_color = colors[type_index];
+  // icons_list.forEach((element) => {
+  //     const type=element.type;
+  //   // const {name,family,prefix,type} = element;
+  //   // qui connetto il colore al tipo
+  //   let type_index = types_list.indexOf(type);
+  //   let icon_color = colors[type_index];
+  //
+  //   iconsContainer.innerHTML+=`
+  //     <div class="icon">
+  //     <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+  //     <h2>${element.name}</h2>
+  //     </div>
+  //     `;
+  //
+  // });
 
-    milestone2.innerHTML+=`
-      <div class="icon">
-      <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
-      <h2>${element.name}</h2>
-      </div>
-      `;
+// o meglio
 
-  });
-
+btn2.addEventListener('click',function()
+{
+iconsContainer.innerHTML='';
+generaIcone(icons_list);
+}
+)
   // Milestone 3:
   // - Aggiungere una select per filtrare le icone in base al tipo.
   // - Popolare le options della select dinamicamente e, ogni volta che cambia il valore selezionato, visualizzare le icone corrispondenti.
@@ -177,70 +191,56 @@ console.log(types_list);
 
 if (selected_type=='') {
 
-      icons_list.forEach((element) => {
-      const type=element.type;
-    // const {name,family,prefix,type} = element;
-    let type_index = types_list.indexOf(type);
-    let icon_color = colors[type_index];
-    iconsContainer.innerHTML+=`
-      <div class="icon">
-      <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
-      <h2>${element.name}</h2>
-      </div>
-      `;
-
-  });
+generaIcone(icons_list);
+  //     icons_list.forEach((element) => {
+  //     const type=element.type;
+  //   // const {name,family,prefix,type} = element;
+  //   let type_index = types_list.indexOf(type);
+  //   let icon_color = colors[type_index];
+  //   iconsContainer.innerHTML+=`
+  //     <div class="icon">
+  //     <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+  //     <h2>${element.name}</h2>
+  //     </div>
+  //     `;
+  //
+  // });
 }
 
 else{
 const selected_icons = icons_list.filter((icon) => selected_type === icon.type);
 
-selected_icons.forEach((element) => {
-const type=element.type;
-// const {name,family,prefix,type} = element;
-let type_index = types_list.indexOf(type);
-let icon_color = colors[type_index];
-iconsContainer.innerHTML+=`
-<div class="icon">
-<i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
-<h2>${element.name}</h2>
-</div>
-`;
 
+generaIcone(selected_icons);
+// selected_icons.forEach((element) => {
+// const type=element.type;
+// // const {name,family,prefix,type} = element;
+// let type_index = types_list.indexOf(type);
+// let icon_color = colors[type_index];
+// iconsContainer.innerHTML+=`
+// <div class="icon">
+// <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+// <h2>${element.name}</h2>
+// </div>
+// `;
+//
+// });
+}
+}
+);
+
+// farmi una funzione?
+function generaIcone(icone_array){
+icone_array.forEach((element) => {
+    const type=element.type;
+  // const {name,family,prefix,type} = element;
+  let type_index = types_list.indexOf(type);
+  let icon_color = colors[type_index];
+  iconsContainer.innerHTML+=`
+    <div class="icon">
+    <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+    <h2>${element.name}</h2>
+    </div>
+    `;
 });
 }
-
-
-// Ho scritto un casino di roba ripetendo le stesse cose,sicuramente si può usare una funzione generica di creazione icone ma ci penso se resta tempo,ora sistemo un pò il css;
-
-
-
-});
-
-
-
-const btn1=document.getElementById('btn1');
-const btn2=document.getElementById('btn2');
-btn1.addEventListener('click',function()
-{
-if(milestone1.style.display=='block')
-{
-  milestone1.style.display='none';
-}
-else{milestone1.style.display='block';
-
-}
-}
-)
-btn2.addEventListener('click',function()
-{
-if(milestone2.style.display=='block')
-{
-  milestone2.style.display='none';
-}
-else{milestone2.style.display='block';
-
-}
-}
-)
-// lo so che jquery ha il toggle
