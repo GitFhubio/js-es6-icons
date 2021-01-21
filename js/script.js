@@ -152,17 +152,17 @@ console.log(types_list);
   // - Aggiungere una select per filtrare le icone in base al tipo.
   // - Popolare le options della select dinamicamente e, ogni volta che cambia il valore selezionato, visualizzare le icone corrispondenti.
 
-  const mySelect =document.getElementsByClassName('icons-filter')[0];
+  const myselect =document.getElementsByClassName('icons-filter')[0];
 
   types_list.forEach((element) => {
-    mySelect.innerHTML += `
+    myselect.innerHTML += `
       <option value="${element}">${element}</option>
     `
   });
-  // 
-  // myselect.addEventListener('change',() => {
-  // let selected_type = myselect.value;
-  // iconsContainer.innerHTML='';
+
+  myselect.addEventListener('change',() => {
+  let selected_type = myselect.value;
+  iconsContainer.innerHTML='';
 
   // injquery
   //   $('select.icons-filter').change(() => {
@@ -173,3 +173,33 @@ console.log(types_list);
   // while (iconsContainer.firstChild){
   //   iconsContainer.removeChild(iconsContainer.firstChild);
   // }
+
+if (selected_type=='') {
+
+      icons_list.forEach((element) => {
+      const type=element.type;
+    // const {name,family,prefix,type} = element;
+    let type_index = types_list.indexOf(type);
+    let icon_color = colors[type_index];
+    iconsContainer.innerHTML+=`
+      <div class="icon">
+      <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+      <h2>${element.name}</h2>
+      </div>
+      `;
+
+  });
+}
+
+else{
+
+
+
+}
+
+
+
+
+
+
+});
