@@ -111,14 +111,17 @@ const iconsContainer=document.getElementById('icons-container');
 const btn1=document.getElementById('btn1');
 const btn2=document.getElementById('btn2');
 btn1.addEventListener('click',function()
-{ iconsContainer.innerHTML='';
+{ if(iconsContainer.innerHTML!='')
+{iconsContainer.innerHTML='';}
+else{
   icons_list.forEach((element) => {
   iconsContainer.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
   });
-
-
+}
 }
 )
+// lo so che esiste Jquery..
+
 // Milestone 2:
 // - Definire un array di colori e associare ad ogni tipo di icona un colore.
 // - Visualizzare le icone di colore diverso in base al tipo.
@@ -159,8 +162,11 @@ console.log(types_list);
 
 btn2.addEventListener('click',function()
 {
-iconsContainer.innerHTML='';
+  if(iconsContainer.innerHTML!='')
+ {iconsContainer.innerHTML='';}
+ else{
 generaIcone(icons_list);
+}
 }
 )
   // Milestone 3:
