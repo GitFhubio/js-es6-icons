@@ -192,13 +192,25 @@ if (selected_type=='') {
 }
 
 else{
+const selected_icons = icons_list.filter((icon) => selected_type === icon.type);
 
+selected_icons.forEach((element) => {
+const type=element.type;
+// const {name,family,prefix,type} = element;
+let type_index = types_list.indexOf(type);
+let icon_color = colors[type_index];
+iconsContainer.innerHTML+=`
+<div class="icon">
+<i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+<h2>${element.name}</h2>
+</div>
+`;
 
-
+});
 }
 
 
-
+// Ho scritto un casino di roba ripetendo le stesse cose,sicuramente si può usare una funzione generica di creazione icone ma ci penso se resta tempo,ora sistemo un pò il css;
 
 
 
