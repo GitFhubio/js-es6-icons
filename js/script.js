@@ -115,7 +115,7 @@ btn1.addEventListener('click',function()
 {iconsContainer.innerHTML='';}
 else{
   icons_list.forEach((element) => {
-  iconsContainer.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><span>${element.name}</span></div>`
+  iconsContainer.innerHTML+=`<div><i class="${element.family} ${element.prefix}${element.name}"></i><p>${element.name}</p></div>`
   });
 }
 }
@@ -245,7 +245,7 @@ icone_array.forEach((element) => {
   iconsContainer.innerHTML+=`
     <div class="icon">
     <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
-    <h2>${element.name}</h2>
+    <p>${element.name}</p>
     </div>
     `;
 });

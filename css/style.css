@@ -5,13 +5,14 @@
 }
 
 body {
-  font-family: '', sans-serif;
+font-family: 'Aladin', cursive;
 }
 
 h1 {
+  padding-top: 10px;
   margin-left: 20px;
   color: #00B3E0;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 40px;
 }
 
@@ -64,6 +65,7 @@ height:50px;
 
 #icons-container div{
   display:flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
    width:250px;
@@ -73,7 +75,12 @@ height:50px;
   background-color: white;
   border-radius: 10px;
 }
+label{
+  letter-spacing: 1px;
+  color:white;
+}
 
-#milestone1,#milestone2{
-  display:none;
+#icons-container div p{
+  margin-top: 5px;
+text-transform: uppercase;
 }
