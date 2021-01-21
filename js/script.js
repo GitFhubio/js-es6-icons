@@ -148,6 +148,28 @@ console.log(types_list);
 
   });
 
+  // Milestone 3:
+  // - Aggiungere una select per filtrare le icone in base al tipo.
+  // - Popolare le options della select dinamicamente e, ogni volta che cambia il valore selezionato, visualizzare le icone corrispondenti.
 
+  const mySelect =document.getElementsByClassName('icons-filter')[0];
 
-  
+  types_list.forEach((element) => {
+    mySelect.innerHTML += `
+      <option value="${element}">${element}</option>
+    `
+  });
+  // 
+  // myselect.addEventListener('change',() => {
+  // let selected_type = myselect.value;
+  // iconsContainer.innerHTML='';
+
+  // injquery
+  //   $('select.icons-filter').change(() => {
+  // let selected_type = $('select.icons-filter').val();
+  // $('#icons-container').empty();
+
+  // oppure alternativa sempre in js puro
+  // while (iconsContainer.firstChild){
+  //   iconsContainer.removeChild(iconsContainer.firstChild);
+  // }
