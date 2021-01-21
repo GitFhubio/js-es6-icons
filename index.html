@@ -2,17 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Esercizio</title>
-    <meta name="description" content="Esercizio">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-    crossorigin="anonymous" />
+    <title>JS ES6 Icons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div id="page-wrapper">
+      <div class="container">
+        <div class="row">
+          <h1>Font Icons</h1>
+        </div>
+        <div class="row">
+          <div id="filter">
+            <select class="icons-filter">
+              <option value="">Show all</option>
+              <option value="animal">animal</option>
+              <option value="vegetable">vegetable</option>
+              <option value="user">user</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div id="icons-container"></div>
+        </div>
+        <div class="row">
+          <p>Check in console</p>
+        </div>
+      </div>
+    </div>
 <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
