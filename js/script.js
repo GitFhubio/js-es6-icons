@@ -131,3 +131,23 @@ if (!types_list.includes(type))
 });
 // ora ho array di colori e array di tipi
 console.log(types_list);
+
+  icons_list.forEach((element) => {
+      const type=element.type;
+    // const {name,family,prefix,type} = element;
+    // qui connetto il colore al tipo
+    let type_index = types_list.indexOf(type);
+    let icon_color = colors[type_index];
+
+    iconsContainer.innerHTML+=`
+      <div class="icon">
+      <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
+      <h2>${element.name}</h2>
+      </div>
+      `;
+
+  });
+
+
+
+  
