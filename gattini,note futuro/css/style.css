@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div{
+  min-height: 10px;
+  font-size:20px;
+}
+
+.container-float{
+  width: 100%;
+}
+
+.container-float > div{
+  float: left;
+  width: calc((100% / 2) - 2px);
+  border: 1px solid black;
+}

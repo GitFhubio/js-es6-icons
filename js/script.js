@@ -142,6 +142,16 @@ if (!types_list.includes(type))
 // ora ho array di colori e array di tipi
 console.log(types_list);
 
+
+//  NOTA:MEGLIO AGGIUNGERE COLORE COME PROPRIETà(F DEL TIPO) ALL' OGGETTO INIZIALE
+icons_list.forEach((element) => {
+    const type_index = types_list.indexOf(element.type);
+   element.color = colors[type_index];
+   ;})
+console.log(icons_list);
+
+
+
   // icons_list.forEach((element) => {
   //     const type=element.type;
   //   // const {name,family,prefix,type} = element;
@@ -215,8 +225,6 @@ generaIcone(icons_list);
 
 else{
 const selected_icons = icons_list.filter((icon) => selected_type === icon.type);
-
-
 generaIcone(selected_icons);
 // selected_icons.forEach((element) => {
 // const type=element.type;
@@ -238,14 +246,12 @@ generaIcone(selected_icons);
 // farmi una funzione?
 function generaIcone(icone_array){
 icone_array.forEach((element) => {
-    const type=element.type;
-  // const {name,family,prefix,type} = element;
-  let type_index = types_list.indexOf(type);
-  let icon_color = colors[type_index];
+  // meglio andare di destrutturazione
+const {family,prefix,name,color}=element;
   iconsContainer.innerHTML+=`
     <div class="icon">
-    <i class="${element.family} ${element.prefix}${element.name}" style='color:${icon_color};'></i>
-    <p>${element.name}</p>
+    <i class="${family} ${prefix}${name}" style='color:${color};'></i>
+    <p>${name}</p>
     </div>
     `;
 });
